@@ -17,7 +17,7 @@
 
   <description>
       <p>DOOM BFA is a DOOM 3: BFG Edition source port Based on RBDoom3BFG.</p>
-      <p>This is the <b>Special</b> Flatpak <i>Edition</i></p>
+      <p>This is the Special Flatpak Edition</p>
       <p>It contains all the features of the original with some UX extras for Flatpak
       That release comes bundled with both the main engine and it's launcher
       To access the launcher you can either use the dektop's shortcut context menu  or use the launch argument -open-launcher</p>
@@ -47,6 +47,9 @@
   </screenshots>
 
   <releases>
+    <release version="1.3.1-BFA" date="2024-01-03">
+      <url>https://github.com/maddecoder/Classic-RBDOOM-3-BFG/releases/1.3.1-BFA</url>
+    </release>
     <release version="1.3.0-BFA-PATCHED" date="2023-10-03">
       <url>https://github.com/maddecoder/Classic-RBDOOM-3-BFG/releases/1.3.0-BFA-PATCHED</url>
     </release>
