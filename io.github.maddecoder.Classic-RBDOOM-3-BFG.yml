@@ -58,10 +58,8 @@ modules:
   sources:
   - type: git
     url: https://github.com/FFmpeg/FFmpeg.git
-    tag: n5.1.3
-    commit: 963937e408fc68b5925f938a253cfff1d506f784
-  - type: patch
-    path: ffmpeg-binutils.patch
+    tag: n6.1.1
+    commit: e38092ef9395d7049f871ef4d5411eb410e283e0
 - name: OpenAL-Soft
   buildsystem: cmake-ninja
   no-autogen: true
@@ -102,8 +100,8 @@ modules:
   sources:
   - type: git
     url: https://github.com/MadDeCoDeR/Classic-RBDOOM-3-BFG.git
-    tag: "1.3.1-BFA"
-    commit: c4ac0cee64f1f88310ec3e0613a9cddbf6200c42
+    tag: "1.3.2-BFA"
+    commit: 1cb505f08f6d0b3280110d703fd9adc7da2b63ad
     disable-submodules: true
   modules:
     - shared-modules/glew/glew.json
@@ -132,9 +130,9 @@ modules:
   sources:
   - type: extra-data
     filename: BFA-Assets.zip
-    url: https://github.com/MadDeCoDeR/BFA-Assets/releases/download/1.3.1/BFA-Assets.zip
-    sha256: bf80074a05540c25f851b0ed47a343718688c7b8da67a6d2af42f043334044b4
-    size: 170929
+    url: https://github.com/MadDeCoDeR/BFA-Assets/releases/download/1.3.2/BFA-Assets.zip
+    sha256: bedb8cf2e6e93274ab49b6b3ba52a07e28d7e58e365ab3594f771344996c32fc
+    size: 172800
     x-checker-data:
       type: json
       url:  https://api.github.com/repos/MadDeCoDeR/BFA-Assets/releases/latest
