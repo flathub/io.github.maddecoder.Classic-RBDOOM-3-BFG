@@ -35,14 +35,17 @@
       </ul>
   </description>
   <screenshots>
-    <screenshot>
+    <screenshot type="default">
       <image>https://github.com/MadDeCoDeR/BFA_Sample_Images/blob/tag/image_01.jpg?raw=true</image>
+      <caption>DOOM 3: ROE with Photo Mode</caption>
     </screenshot>
     <screenshot>
       <image>https://github.com/MadDeCoDeR/BFA_Sample_Images/blob/tag/image_02.jpg?raw=true</image>
+      <caption>Ultimate DOOM with Photo Mode</caption>
     </screenshot>
     <screenshot>
       <image>https://github.com/MadDeCoDeR/BFA_Sample_Images/blob/tag/iamge_03.jpg?raw=true</image>
+      <caption>Teaser?</caption>
     </screenshot>
   </screenshots>
 
