@@ -22,6 +22,7 @@ finish-args:
 - --filesystem=home:ro
 - --filesystem=/run/media:ro
 - --filesystem=/media:ro
+- --filesystem=/mnt:ro
 
 cleanup:
 - /include
@@ -93,8 +94,8 @@ modules:
   sources:
   - type: git
     url: https://github.com/MadDeCoDeR/Classic-RBDOOM-3-BFG.git
-    tag: "nightly-2025-10-26-18-35-1761503758"
-    commit: 42bac092be60fa5f69d0ec73473b61561557a07a
+    tag: "nightly-2025-10-28-12-11-1761653496"
+    commit: fe5ffb955f8567cb1d64d1f71a874414650b56f3
     disable-submodules: true
   modules:
     - shared-modules/glew/glew.json
