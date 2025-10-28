@@ -1,10 +1,8 @@
 app-id: io.github.maddecoder.Classic-RBDOOM-3-BFG
 runtime: org.freedesktop.Platform
 sdk: org.freedesktop.Sdk
-runtime-version: "23.08"
+runtime-version: "25.08"
 command: DOOMBFA.sh
-sdk-extensions:
-    - org.freedesktop.Sdk.Extension.mono6
 build-options:
     append-path: /usr/lib/sdk/mono6/bin
     append-ld-library-path: /usr/lib/sdk/mono6/lib
@@ -39,12 +37,7 @@ cleanup:
 - /lib/cmake/OpenAL
 
 modules:
-- name: libgdiplus
-  buildsystem: autotools
-  sources:
-    - type: archive
-      url: https://download.mono-project.com/sources/libgdiplus/libgdiplus-6.1.tar.gz
-      sha256: 97d5a83d6d6d8f96c27fb7626f4ae11d3b38bc88a1726b4466aeb91451f3255b
+
 - name: FFMPEG
   no-autogen: true  
   config-opts:
@@ -58,8 +51,8 @@ modules:
   sources:
   - type: git
     url: https://github.com/FFmpeg/FFmpeg.git
-    tag: n6.1.1
-    commit: e38092ef9395d7049f871ef4d5411eb410e283e0
+    tag: n7.1.2
+    commit: f893221c8d89cb798b829bebe71d55e1a3f242fd
 - name: OpenAL-Soft
   buildsystem: cmake-ninja
   no-autogen: true
@@ -68,8 +61,9 @@ modules:
   sources:
   - type: git
     url: https://github.com/kcat/openal-soft.git
-    tag: "1.23.1"
-    commit: d3875f333fb6abe2f39d82caca329414871ae53b
+    tag: "1.24.3"
+    commit: dc7d7054a5b4f3bec1dc23a42fd616a0847af948
+
 - name: DoomBFA
   buildsystem: cmake-ninja
   subdir: neo
@@ -92,47 +86,33 @@ modules:
    - -DOPENAL_FOUND=true
    - -DOPENAL_INCLUDE_DIR=/app/include
    - -DOPENAL_LIBRARY=/app/lib/libopenal.so
-   - -DOPENAL_VERSION_STRING=1.23.1
+   - -DOPENAL_VERSION_STRING=1.24.3
    - -DUSE_SYSTEM_LIBPNG=false
-   - -DSDL2_INCLUDE_DIR=/app/include/SDL2
-   - -DSDL2_LIBRARY=/app/lib/libSDL2.so;/app/lib/libSDL2main.a
    - -DUSE_SYSTEM_RAPIDJSON=false
+   - -DUSE_OPENXR=OFF
   sources:
   - type: git
     url: https://github.com/MadDeCoDeR/Classic-RBDOOM-3-BFG.git
-    tag: "1.3.2-BFA_patched"
-    commit: 20c40873d8d60a14a56664897b74f83d2aa0f313
+    tag: "nightly-2025-10-26-18-35-1761503758"
+    commit: 42bac092be60fa5f69d0ec73473b61561557a07a
     disable-submodules: true
   modules:
     - shared-modules/glew/glew.json
     - shared-modules/glu/glu-9.json
-    - shared-modules/SDL2/SDL2-with-libdecor.json
   build-commands:
     - install -Dm 755 DoomBFA /app/bin/DoomBFA
     - mkdir -p /app/share/games/doombfa
     - cp -R ../../base /app/share/games/doombfa/base
     - cp -R ../../base_new /app/share/games/doombfa/base_NEW
 
-- name: CDL
-  buildsystem: simple
-  sources:
-  - type: archive
-    url: https://github.com/MadDeCoDeR/CRBDL/releases/download/1.0.1.6-21/CDL.zip
-    sha512: d4866b7fc1b244a8bfd30c61ff6cbccf1db0f5b05e7506741c70c02cabddc52b67fab5d872ba1dd8992135d1930e4b96e89e073e4a381fbbd1202bbc073a7e1e
-  - type: file
-    path: install-mono.sh
-  build-commands:
-  - install -Dm 755 CDL.exe /app/bin/CDL.exe
-  - ./install-mono.sh
-
 - name: DoomBFA-assets
   buildsystem: simple
   sources:
   - type: extra-data
     filename: BFA-Assets.zip
-    url: https://github.com/MadDeCoDeR/BFA-Assets/releases/download/1.3.2/BFA-Assets.zip
-    sha256: bedb8cf2e6e93274ab49b6b3ba52a07e28d7e58e365ab3594f771344996c32fc
-    size: 172800
+    url: https://github.com/MadDeCoDeR/BFA-Assets/archive/refs/heads/main.zip
+    sha256: 9b41f9a27a0f03119b8cca943721040620d67477033ed1501a82ef0cc410785a
+    size: 178229
     x-checker-data:
       type: json
       url:  https://api.github.com/repos/MadDeCoDeR/BFA-Assets/releases/latest
