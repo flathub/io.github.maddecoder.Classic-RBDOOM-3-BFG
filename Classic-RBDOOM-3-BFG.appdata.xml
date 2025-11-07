@@ -18,11 +18,9 @@
   <description>
       <p>DOOM BFA is a DOOM 3: BFG Edition source port Based on RBDoom3BFG.</p>
       <p>This is the Special Flatpak Edition</p>
-      <p>It contains all the features of the original with some UX extras for Flatpak
-      That release comes bundled with both the main engine and it's launcher
-      To access the launcher you can either use the dektop's shortcut context menu  or use the launch argument -open-launcher</p>
-      <p>Both the engine and the launcher search for the game folder on your system.
-      If the engine boots with the wrong game files, use the launcher to selected yopur desired game</p>
+      <p>It contains all the features of the original with some UX extras for Flatpak</p>
+      <p>The engine search for the game folder on your system.
+      If the engine boots with the wrong game files, use the launch argument +set fs_basepath to set right game folder</p>
       <p>To install Open platform put the Open Platform .so file on either the game's or the save folder's (~/.var/app/io.github.maddecoder.Classic-RBDOOM-3-BFG/data/.doombfa) base folder.
         And the companion .so file on the ~/.var/app/io.github.maddecoder.Classic-RBDOOM-3-BFG/data/.doombfa/base/lib folder along side with any additional file that is required</p>
       <p>Known Bugs:</p>
@@ -50,6 +48,9 @@
   </screenshots>
 
   <releases>
+    <release version="1.4.0" date="2025-11-07">
+      <url>https://github.com/maddecoder/Classic-RBDOOM-3-BFG/releases/v1.4.0</url>
+    </release>
     <release version="1.3.2-BFA_patched" date="2024-04-03">
       <url>https://github.com/maddecoder/Classic-RBDOOM-3-BFG/releases/1.3.2-BFA_patched</url>
     </release>
