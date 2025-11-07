@@ -96,8 +96,8 @@ modules:
   sources:
   - type: git
     url: https://github.com/MadDeCoDeR/Classic-RBDOOM-3-BFG.git
-    tag: "nightly-2025-11-01-09-12-1761988340"
-    commit: 7a4a3ec9d4d35dcaf602acbeb879c6ca071fec4c
+    tag: "v1.4.0"
+    commit: 4c72e944911bb0c8032cfc3885683b16591347ed
     disable-submodules: true
   modules:
     - shared-modules/glew/glew.json
@@ -118,9 +118,9 @@ modules:
   sources:
   - type: extra-data
     filename: BFA-Assets.zip
-    url: https://github.com/MadDeCoDeR/BFA-Assets/archive/refs/heads/main.zip
-    sha256: 180ad9a7b0593b02ec86d61a7c39c3261713c9ed0c800c0f05fac99dc1b6dc1b
-    size: 178229
+    url: https://github.com/MadDeCoDeR/BFA-Assets/archive/refs/tags/1.4.0.zip
+    sha256: 1db9fea9d1413608c16b41f1005914597f18e046e56a63d5f5ebd23d5df19ca0
+    size: 178267
     x-checker-data:
       type: json
       url:  https://api.github.com/repos/MadDeCoDeR/BFA-Assets/releases/latest

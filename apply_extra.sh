@@ -5,8 +5,8 @@ cp -R /app/share/games/doombfa/base/* games/doombfa/base
 cp -R /app/share/games/doombfa/base_BFG/* games/doombfa/base_BFG
 cp -R /app/share/games/doombfa/* games/doombfa
 unzip BFA-Assets.zip
-cp -R BFA-Assets-main/base/* games/doombfa/base
-cp -R BFA-Assets-main/base_BFG/* games/doombfa/base_BFG
-cp -R BFA-Assets-main/* games/doombfa
-rm -r BFA-Assets-main
+cp -R BFA-Assets-1.4.0/base/* games/doombfa/base
+cp -R BFA-Assets-1.4.0/base_BFG/* games/doombfa/base_BFG
+cp -R BFA-Assets-1.4.0/* games/doombfa
+rm -r BFA-Assets-1.4.0
 rm BFA-Assets.zip
