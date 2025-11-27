@@ -3,10 +3,6 @@ runtime: org.freedesktop.Platform
 sdk: org.freedesktop.Sdk
 runtime-version: "25.08"
 command: DOOMBFA.sh
-build-options:
-    append-path: /usr/lib/sdk/mono6/bin
-    append-ld-library-path: /usr/lib/sdk/mono6/lib
-    append-pkg-config-path: /usr/lib/sdk/mono6/lib/pkgconfig
 
 finish-args:
 - --device=all
@@ -97,8 +93,8 @@ modules:
   sources:
   - type: git
     url: https://github.com/MadDeCoDeR/Classic-RBDOOM-3-BFG.git
-    tag: "v1.4.0"
-    commit: 4c72e944911bb0c8032cfc3885683b16591347ed
+    tag: "v1.4.1"
+    commit: 2601482f7aa4e9519fa009367564d507b6edfe7d
     disable-submodules: true
   modules:
     - shared-modules/glew/glew.json
@@ -119,9 +115,9 @@ modules:
   sources:
   - type: extra-data
     filename: BFA-Assets.zip
-    url: https://github.com/MadDeCoDeR/BFA-Assets/archive/refs/tags/1.4.0.zip
-    sha256: 1db9fea9d1413608c16b41f1005914597f18e046e56a63d5f5ebd23d5df19ca0
-    size: 178267
+    url: https://github.com/MadDeCoDeR/BFA-Assets/archive/refs/tags/1.4.1.zip
+    sha256: 0eacd405a7a8bde7dbfd9783dad72ef85b50a721fc396f5133db96957ce2d4c5
+    size: 179339
     x-checker-data:
       type: json
       url:  https://api.github.com/repos/MadDeCoDeR/BFA-Assets/releases/latest
