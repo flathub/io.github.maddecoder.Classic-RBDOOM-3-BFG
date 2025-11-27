@@ -48,6 +48,10 @@
   </screenshots>
 
   <releases>
+    <release version="1.4.1" date="2025-11-27">
+      <description></description>
+      <url>https://github.com/maddecoder/Classic-RBDOOM-3-BFG/releases/v1.4.1</url>
+    </release>
     <release version="1.4.0" date="2025-11-07">
       <url>https://github.com/maddecoder/Classic-RBDOOM-3-BFG/releases/v1.4.0</url>
     </release>
