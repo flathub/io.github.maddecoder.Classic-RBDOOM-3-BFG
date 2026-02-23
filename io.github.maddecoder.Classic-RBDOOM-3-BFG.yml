@@ -50,8 +50,8 @@ modules:
   sources:
   - type: git
     url: https://github.com/FFmpeg/FFmpeg.git
-    tag: n7.1.2
-    commit: f893221c8d89cb798b829bebe71d55e1a3f242fd
+    tag: n8.0.1
+    commit: 894da5ca7d742e4429ffb2af534fcda0103ef593
 - name: OpenAL-Soft
   buildsystem: cmake-ninja
   no-autogen: true
@@ -60,8 +60,8 @@ modules:
   sources:
   - type: git
     url: https://github.com/kcat/openal-soft.git
-    tag: "1.24.3"
-    commit: dc7d7054a5b4f3bec1dc23a42fd616a0847af948
+    tag: "1.25.1"
+    commit: c41d64c6a35f6174bf4a27010aeac52a8d3bb2c6
 
 - name: DoomBFA
   buildsystem: cmake-ninja
@@ -85,7 +85,7 @@ modules:
    - -DOPENAL_FOUND=true
    - -DOPENAL_INCLUDE_DIR=/app/include
    - -DOPENAL_LIBRARY=/app/lib/libopenal.so
-   - -DOPENAL_VERSION_STRING=1.24.3
+   - -DOPENAL_VERSION_STRING=1.25.1
    - -DUSE_SYSTEM_LIBPNG=false
    - -DUSE_SYSTEM_RAPIDJSON=false
    - -DUSE_OPENXR=OFF
@@ -93,8 +93,8 @@ modules:
   sources:
   - type: git
     url: https://github.com/MadDeCoDeR/Classic-RBDOOM-3-BFG.git
-    tag: "v1.4.1"
-    commit: 2601482f7aa4e9519fa009367564d507b6edfe7d
+    tag: "v1.4.2"
+    commit: 77f375b7e3820c28445f1fdfb6f3426fc0a6896f
     disable-submodules: true
   modules:
     - shared-modules/glew/glew.json
