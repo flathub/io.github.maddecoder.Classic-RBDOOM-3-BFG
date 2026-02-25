@@ -12,6 +12,7 @@
   <url type="homepage">https://github.com/maddecoder/Classic-RBDOOM-3-BFG</url>
   <url type="help">https://github.com/maddecoder/Classic-RBDOOM-3-BFG/wiki</url>
   <url type="bugtracker">https://github.com/maddecoder/Classic-RBDOOM-3-BFG/issues</url>
+  <url type="vcs-browser">https://github.com/maddecoder/Classic-RBDOOM-3-BFG</url>
 
   <launchable type="desktop-id">io.github.maddecoder.Classic-RBDOOM-3-BFG.desktop</launchable>
 
