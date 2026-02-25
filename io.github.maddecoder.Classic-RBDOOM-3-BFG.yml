@@ -93,8 +93,8 @@ modules:
   sources:
   - type: git
     url: https://github.com/MadDeCoDeR/Classic-RBDOOM-3-BFG.git
-    tag: "v1.4.2_1"
-    commit: db95f7e50b43ff30517cd89324e3814194e8b531
+    tag: "v1.4.2_2"
+    commit: 7f0c700e82ba82f4c4bdde6b6e33536ed4fbb947
     disable-submodules: true
   modules:
     - shared-modules/glew/glew.json
