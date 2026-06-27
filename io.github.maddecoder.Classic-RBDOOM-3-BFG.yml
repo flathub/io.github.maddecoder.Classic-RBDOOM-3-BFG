@@ -79,6 +79,8 @@ modules:
   sources:
     - type: git
       url: https://github.com/MadDeCoDeR/CRBDL.git
+      tag: "1.0.17.12"
+      commit: e8c3a59202eb6a7ef7d4191ee8cee006347373aa
     - ./nuget-sources.json
   build-commands:
     - dotnet publish ./dbfal/dbfal.csproj -c Release --no-self-contained --source ./nuget-sources
@@ -115,8 +117,8 @@ modules:
   sources:
   - type: git
     url: https://github.com/MadDeCoDeR/Classic-RBDOOM-3-BFG.git
-    tag: "v1.4.2_2"
-    commit: 7f0c700e82ba82f4c4bdde6b6e33536ed4fbb947
+    tag: "v1.4.3"
+    commit: 28fdd848aad94af7155a3c594b5c232a6ee80662
     disable-submodules: true
   modules:
     - shared-modules/glew/glew.json
