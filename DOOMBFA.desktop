@@ -6,3 +6,8 @@ Terminal=false
 Type=Application
 Categories=Game;
 PrefersNonDefaultGPU=true
+Actions=open-directly
+
+[Desktop Action open-directly]
+Name=Open without the Launcher
+Exec=DOOMBFA.sh -open-directly
