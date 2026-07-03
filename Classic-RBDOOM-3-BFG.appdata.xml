@@ -22,8 +22,8 @@
       <p>It contains all the features of the original with some UX extras for Flatpak</p>
       <p>The engine search for the game folder on your system.
       If the engine boots with the wrong game files, use the launch argument +set fs_basepath to set right game folder</p>
-      <p>To install Open platform put the Open Platform .so file on either the game's or the save folder's (~/.var/app/io.github.maddecoder.Classic-RBDOOM-3-BFG/data/.doombfa) base folder.
-        And the companion .so file on the ~/.var/app/io.github.maddecoder.Classic-RBDOOM-3-BFG/data/.doombfa/base/lib folder along side with any additional file that is required</p>
+      <p>To install Open platform put the Open Platform .so file on the game's base folder.
+        And any additional .so files on both the game's folder and (optionally) the ~/.var/app/io.github.maddecoder.Classic-RBDOOM-3-BFG/data/.doombfa/base/lib folder along side with any additional files that are required</p>
       <p>Known Bugs:</p>
       <p>(NOTE: Those bugs only apply to that release)</p>
       <ul style="list-style-type:none;">
