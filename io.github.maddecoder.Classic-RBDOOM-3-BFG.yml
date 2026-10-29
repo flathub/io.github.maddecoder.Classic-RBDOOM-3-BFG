@@ -25,6 +25,7 @@ finish-args:
 - --filesystem=/run/media:ro
 - --filesystem=/media:ro
 - --filesystem=/mnt:ro
+- --filesystem=xdg-run/pipewire-0:ro
 # Simpler way of preventing KDE related errors
 - --env=KDE_FULL_SESSION=false
 - --env=DOTNET_ROOT=/app/lib/dotnet
@@ -40,6 +41,8 @@ cleanup:
 - /share/ffmpeg
 - /bin/al*
 - /bin/openal*
+- /bin/makemhr
+- /lib/debug
 - /lib/cmake/OpenAL
 
 modules:
@@ -57,8 +60,8 @@ modules:
   sources:
   - type: git
     url: https://github.com/FFmpeg/FFmpeg.git
-    tag: n8.0.1
-    commit: 894da5ca7d742e4429ffb2af534fcda0103ef593
+    tag: n8.1.2
+    commit: 38b88335f99e76ed89ff3c93f877fdefce736c13
 - name: OpenAL-Soft
   buildsystem: cmake-ninja
   no-autogen: true
@@ -69,6 +72,18 @@ modules:
     url: https://github.com/kcat/openal-soft.git
     tag: "1.25.1"
     commit: c41d64c6a35f6174bf4a27010aeac52a8d3bb2c6
+- name: SDL3-with-patch
+  buildsystem: cmake-ninja
+  no-autogen: true
+  config-opts:
+    - -DCMAKE_BUILD_TYPE=Release
+  sources:
+  - type: git
+    url: https://github.com/libsdl-org/SDL
+    tag: "release-3.4.12"
+    commit: f87239e71e42da91ca317a12eefb82cfbf3393eb
+  - type: patch
+    path: linux_impulse_triggers.patch
 - name: dotnet
   buildsystem: simple
   build-commands:
@@ -79,8 +94,8 @@ modules:
   sources:
     - type: git
       url: https://github.com/MadDeCoDeR/CRBDL.git
-      tag: "1.0.17.13"
-      commit: f7381cbea9821f27e1af134c7869f8e832fdf8e1
+      tag: "1.0.17.18"
+      commit: 183575a00d9e6149ce967ce040e1fbdfc3c1f9dc
     - ./nuget-sources.json
   build-commands:
     - dotnet publish ./dbfal/dbfal.csproj -c Release --no-self-contained --source ./nuget-sources
@@ -117,8 +132,8 @@ modules:
   sources:
   - type: git
     url: https://github.com/MadDeCoDeR/Classic-RBDOOM-3-BFG.git
-    tag: "v1.4.3"
-    commit: 28fdd848aad94af7155a3c594b5c232a6ee80662
+    tag: "nightly-2026-10-29-20-56-1793307372"
+    commit: f025fc1faf4b37150fde42066ebbf9480f3db453
     disable-submodules: true
   modules:
     - shared-modules/glew/glew.json
@@ -139,16 +154,16 @@ modules:
   sources:
   - type: extra-data
     filename: BFA-Assets.zip
-    url: https://github.com/MadDeCoDeR/BFA-Assets/archive/refs/tags/1.4.1.zip
-    sha256: 0eacd405a7a8bde7dbfd9783dad72ef85b50a721fc396f5133db96957ce2d4c5
-    size: 179339
-    x-checker-data:
-      type: json
-      url:  https://api.github.com/repos/MadDeCoDeR/BFA-Assets/releases/latest
-      tag-query: .tag_name
-      version-query: $tag
-      timestamp-query: .published_at
-      url-query: .assets[] | .browser_download_url
+    url: https://github.com/MadDeCoDeR/BFA-Assets/archive/refs/heads/main.zip
+    sha256: 696225fe559e5595122a7c8d8317d6d8c0b14bff2120e2c4a82eeb9fb94d490e
+    size: 180701
+    # x-checker-data:
+    #   type: json
+    #   url:  https://api.github.com/repos/MadDeCoDeR/BFA-Assets/releases/latest
+    #   tag-query: .tag_name
+    #   version-query: $tag
+    #   timestamp-query: .published_at
+    #   url-query: .assets[] | .browser_download_url
   - type: file
     path: Classic-RBDOOM-3-BFG.appdata.xml
   - type: file
