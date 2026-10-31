@@ -83,7 +83,6 @@
           <li>Replace GLEW with GLAD and fix missing extension errors when using MESA drivers on Core Profile</li>
         </ul>
       </description>
-      <url>https://github.com/maddecoder/Classic-RBDOOM-3-BFG/releases/v1.4.4</url>
     </release>
   <releases>
     <release version="1.4.3" date="2026-06-27">
