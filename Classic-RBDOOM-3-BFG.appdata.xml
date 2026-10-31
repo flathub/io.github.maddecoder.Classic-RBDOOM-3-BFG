@@ -20,13 +20,10 @@
       <p>DOOM BFA is a DOOM 3: BFG Edition source port Based on RBDoom3BFG.</p>
       <p>This is the Special Flatpak Edition</p>
       <p>It contains all the features of the original with some UX extras for Flatpak</p>
-      <p>This version is pre-bundled with the launcher which can allow you to select the game path of your choise (It takes alittle time to find the game paths)<br>
-      If you want to skip the launcher and run the game directly launch it with the launch argument <i>-open-directly</i>
-      </p>
-      <p>The engine search for the game folder on your system.<br>
-      If the engine boots with the wrong game files or if you want to avoid searching for the game folder, use the launch argument <i>+set fs_basepath</i> to set right game folder</p>
-      <p>To install Open platform put the Open Platform's .so file on the game's base folder.<br>
-        And any additional .so files on either the game's folder or the (optionally) ~/.var/app/io.github.maddecoder.Classic-RBDOOM-3-BFG/data/.doombfa/base/lib folder along side with any additional files that are required</p>
+      <p>This version is pre-bundled with the launcher which can allow you to select the game path of your choise (It takes alittle time to find the game paths)
+      If you want to skip the launcher and run the game directly launch it with the launch argument '-open-directly' followed with '+set fs_basepath' and the gamepath of your choice</p>
+      <p>To install Open platform put the Open Platform's .so file on the game's base folder.
+        And any additional .so files on the game's folder along side with any additional files that are required</p>
       <p>Known Bugs:</p>
       <p>(NOTE: Those bugs only apply to that release)</p>
       <ul style="list-style-type:none;">
@@ -60,8 +57,8 @@
           <li>Fix and improve Multiplayer by using DOOM 3's idUDP class</li>
           <li>Fix corshair hit frame decay</li>
           <li>Improve Damage based rumble effects</li>
-          <li>Add a new DEHACKED extension for Weapon Impulse trigger effects (see https://github.com/MadDeCoDeR/Classic-RBDOOM-3-BFG/wiki/A11.-DEHACKED-Extensions#weaponimpulse)</li>
-          <li>Add screen shader that can be enables in Video Settings -> Adv Graphics (The name of the shader files are classic.vs & classic.ps)</li>
+          <li>Add a new DEHACKED extension for Weapon Impulse trigger effects (see <url>https://github.com/MadDeCoDeR/Classic-RBDOOM-3-BFG/wiki/A11.-DEHACKED-Extensions#weaponimpulse</url>)</li>
+          <li>Add screen shader that can be enables in Video Settings -> Adv Graphics (The name of the shader files are classic.vs and classic.ps)</li>
         </ul>
         <p>DOOM 3</p>
         <ul>
@@ -75,7 +72,7 @@
         </ul>
         <p>Engine</p>
         <ul>
-          <li>Add support For Impulse Triggers (Requires Windows 10 or newer and for Linux is recommended to use the following driver: https://github.com/MadDeCoDeR/xone/tree/impulse_trigger)</li>
+          <li>Add support For Impulse Triggers (Requires Windows 10 or newer and for Linux is recommended to use the following driver: <url>https://github.com/MadDeCoDeR/xone/tree/impulse_trigger</url>)</li>
           <li>Fix how screen parameters (fullscreen, borderless, windowed) are applied on SDL</li>
           <li>Replace the joystick detection thread with SDL events</li>
           <li>Increase default max aniso filtering from 8 to 16</li>
@@ -84,7 +81,6 @@
         </ul>
       </description>
     </release>
-  <releases>
     <release version="1.4.3" date="2026-06-27">
       <description></description>
       <url>https://github.com/maddecoder/Classic-RBDOOM-3-BFG/releases/v1.4.3</url>
