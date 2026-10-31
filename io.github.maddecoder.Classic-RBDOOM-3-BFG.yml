@@ -1,7 +1,7 @@
 app-id: io.github.maddecoder.Classic-RBDOOM-3-BFG
 runtime: org.freedesktop.Platform
 sdk: org.freedesktop.Sdk
-runtime-version: "25.08"
+runtime-version: "26.08"
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.dotnet10
 build-options:
@@ -13,7 +13,7 @@ command: DOOMBFA.sh
 finish-args:
 - --device=all
 - --socket=wayland
-- --socket=x11
+- --socket=fallback-x11
 - --share=ipc
 - --share=network
 - --socket=pulseaudio
@@ -42,7 +42,6 @@ cleanup:
 - /bin/al*
 - /bin/openal*
 - /bin/makemhr
-- /lib/debug
 - /lib/cmake/OpenAL
 
 modules:
@@ -84,6 +83,17 @@ modules:
     commit: f87239e71e42da91ca317a12eefb82cfbf3393eb
   - type: patch
     path: linux_impulse_triggers.patch
+- name: Zlib
+  buildsystem: cmake-ninja
+  no-autogen: true
+  config-opts:
+   - -DCMAKE_BUILD_TYPE=Release
+  sources:
+  - type: git
+    url: https://github.com/madler/zlib.git
+    tag: "v1.3.2"
+    commit: da607da739fa6047df13e66a2af6b8bec7c2a498
+
 - name: dotnet
   buildsystem: simple
   build-commands:

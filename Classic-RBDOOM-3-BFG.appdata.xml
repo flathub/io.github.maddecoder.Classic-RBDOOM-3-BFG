@@ -133,5 +133,15 @@
     <color type="primary" scheme_preference="light">#f24b4d</color>
     <color type="primary" scheme_preference="dark">#190505</color>
   </branding>
+
+  <supports>
+    <control>keyboard</control>
+    <control>pointing</control>
+    <control>gamepad</control>
+  </supports>
+
+  <requires>
+    <display_length compare="ge">720</display_length>
+  </requires>
 </component>
 
