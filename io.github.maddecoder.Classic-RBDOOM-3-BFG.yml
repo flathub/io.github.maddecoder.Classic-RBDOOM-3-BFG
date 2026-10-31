@@ -132,8 +132,8 @@ modules:
   sources:
   - type: git
     url: https://github.com/MadDeCoDeR/Classic-RBDOOM-3-BFG.git
-    tag: "nightly-2026-10-29-20-56-1793307372"
-    commit: f025fc1faf4b37150fde42066ebbf9480f3db453
+    tag: "v1.4.4"
+    commit: e86debfcf14542c22feeee91f1729474f61c01f5
     disable-submodules: true
   modules:
     - shared-modules/glew/glew.json
@@ -154,16 +154,16 @@ modules:
   sources:
   - type: extra-data
     filename: BFA-Assets.zip
-    url: https://github.com/MadDeCoDeR/BFA-Assets/archive/refs/heads/main.zip
-    sha256: 696225fe559e5595122a7c8d8317d6d8c0b14bff2120e2c4a82eeb9fb94d490e
-    size: 180701
-    # x-checker-data:
-    #   type: json
-    #   url:  https://api.github.com/repos/MadDeCoDeR/BFA-Assets/releases/latest
-    #   tag-query: .tag_name
-    #   version-query: $tag
-    #   timestamp-query: .published_at
-    #   url-query: .assets[] | .browser_download_url
+    url: https://github.com/MadDeCoDeR/BFA-Assets/archive/refs/tags/1.4.4.zip
+    sha256: cf41fb9a31eead733d1398fef535a720189b5b2dbc2756671c9c92f10791e167
+    size: 180592
+    x-checker-data:
+      type: json
+      url:  https://api.github.com/repos/MadDeCoDeR/BFA-Assets/releases/latest
+      tag-query: .tag_name
+      version-query: $tag
+      timestamp-query: .published_at
+      url-query: .assets[] | .browser_download_url
   - type: file
     path: Classic-RBDOOM-3-BFG.appdata.xml
   - type: file
