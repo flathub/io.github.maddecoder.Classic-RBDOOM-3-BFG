@@ -57,7 +57,7 @@
           <li>Fix and improve Multiplayer by using DOOM 3's idUDP class</li>
           <li>Fix corshair hit frame decay</li>
           <li>Improve Damage based rumble effects</li>
-          <li>Add a new DEHACKED extension for Weapon Impulse trigger effects (see <url>https://github.com/MadDeCoDeR/Classic-RBDOOM-3-BFG/wiki/A11.-DEHACKED-Extensions#weaponimpulse</url>)</li>
+          <li>Add a new DEHACKED extension for Weapon Impulse trigger effects (see https://github.com/MadDeCoDeR/Classic-RBDOOM-3-BFG/wiki/A11.-DEHACKED-Extensions#weaponimpulse)</li>
           <li>Add screen shader that can be enables in Video Settings -> Adv Graphics (The name of the shader files are classic.vs and classic.ps)</li>
         </ul>
         <p>DOOM 3</p>
@@ -72,7 +72,7 @@
         </ul>
         <p>Engine</p>
         <ul>
-          <li>Add support For Impulse Triggers (Requires Windows 10 or newer and for Linux is recommended to use the following driver: <url>https://github.com/MadDeCoDeR/xone/tree/impulse_trigger</url>)</li>
+          <li>Add support For Impulse Triggers (Requires Windows 10 or newer and for Linux is recommended to use the following driver: https://github.com/MadDeCoDeR/xone/tree/impulse_trigger)</li>
           <li>Fix how screen parameters (fullscreen, borderless, windowed) are applied on SDL</li>
           <li>Replace the joystick detection thread with SDL events</li>
           <li>Increase default max aniso filtering from 8 to 16</li>
