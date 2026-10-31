@@ -1,7 +1,7 @@
 app-id: io.github.maddecoder.Classic-RBDOOM-3-BFG
 runtime: org.freedesktop.Platform
 sdk: org.freedesktop.Sdk
-runtime-version: "25.08"
+runtime-version: "26.08"
 sdk-extensions:
   - org.freedesktop.Sdk.Extension.dotnet10
 build-options:
@@ -13,7 +13,7 @@ command: DOOMBFA.sh
 finish-args:
 - --device=all
 - --socket=wayland
-- --socket=x11
+- --socket=fallback-x11
 - --share=ipc
 - --share=network
 - --socket=pulseaudio
@@ -25,6 +25,7 @@ finish-args:
 - --filesystem=/run/media:ro
 - --filesystem=/media:ro
 - --filesystem=/mnt:ro
+- --filesystem=xdg-run/pipewire-0:ro
 # Simpler way of preventing KDE related errors
 - --env=KDE_FULL_SESSION=false
 - --env=DOTNET_ROOT=/app/lib/dotnet
@@ -40,6 +41,7 @@ cleanup:
 - /share/ffmpeg
 - /bin/al*
 - /bin/openal*
+- /bin/makemhr
 - /lib/cmake/OpenAL
 
 modules:
@@ -57,8 +59,8 @@ modules:
   sources:
   - type: git
     url: https://github.com/FFmpeg/FFmpeg.git
-    tag: n8.0.1
-    commit: 894da5ca7d742e4429ffb2af534fcda0103ef593
+    tag: n8.1.2
+    commit: 38b88335f99e76ed89ff3c93f877fdefce736c13
 - name: OpenAL-Soft
   buildsystem: cmake-ninja
   no-autogen: true
@@ -69,6 +71,29 @@ modules:
     url: https://github.com/kcat/openal-soft.git
     tag: "1.25.1"
     commit: c41d64c6a35f6174bf4a27010aeac52a8d3bb2c6
+- name: SDL3-with-patch
+  buildsystem: cmake-ninja
+  no-autogen: true
+  config-opts:
+    - -DCMAKE_BUILD_TYPE=Release
+  sources:
+  - type: git
+    url: https://github.com/libsdl-org/SDL
+    tag: "release-3.4.12"
+    commit: f87239e71e42da91ca317a12eefb82cfbf3393eb
+  - type: patch
+    path: linux_impulse_triggers.patch
+- name: Zlib
+  buildsystem: cmake-ninja
+  no-autogen: true
+  config-opts:
+   - -DCMAKE_BUILD_TYPE=Release
+  sources:
+  - type: git
+    url: https://github.com/madler/zlib.git
+    tag: "v1.3.2"
+    commit: da607da739fa6047df13e66a2af6b8bec7c2a498
+
 - name: dotnet
   buildsystem: simple
   build-commands:
@@ -79,8 +104,8 @@ modules:
   sources:
     - type: git
       url: https://github.com/MadDeCoDeR/CRBDL.git
-      tag: "1.0.17.13"
-      commit: f7381cbea9821f27e1af134c7869f8e832fdf8e1
+      tag: "1.0.17.18"
+      commit: 183575a00d9e6149ce967ce040e1fbdfc3c1f9dc
     - ./nuget-sources.json
   build-commands:
     - dotnet publish ./dbfal/dbfal.csproj -c Release --no-self-contained --source ./nuget-sources
@@ -117,8 +142,8 @@ modules:
   sources:
   - type: git
     url: https://github.com/MadDeCoDeR/Classic-RBDOOM-3-BFG.git
-    tag: "v1.4.3"
-    commit: 28fdd848aad94af7155a3c594b5c232a6ee80662
+    tag: "v1.4.4"
+    commit: e86debfcf14542c22feeee91f1729474f61c01f5
     disable-submodules: true
   modules:
     - shared-modules/glew/glew.json
@@ -139,9 +164,9 @@ modules:
   sources:
   - type: extra-data
     filename: BFA-Assets.zip
-    url: https://github.com/MadDeCoDeR/BFA-Assets/archive/refs/tags/1.4.1.zip
-    sha256: 0eacd405a7a8bde7dbfd9783dad72ef85b50a721fc396f5133db96957ce2d4c5
-    size: 179339
+    url: https://github.com/MadDeCoDeR/BFA-Assets/archive/refs/tags/1.4.4.zip
+    sha256: cf41fb9a31eead733d1398fef535a720189b5b2dbc2756671c9c92f10791e167
+    size: 180592
     x-checker-data:
       type: json
       url:  https://api.github.com/repos/MadDeCoDeR/BFA-Assets/releases/latest
@@ -160,10 +185,11 @@ modules:
   - type: file
     path: apply_extra.sh
   build-commands:
+    - install -Dm 755 DOOMBFA.sh /app/bin/DOOMBFA.sh
     - install -Dm 644 DOOMBFA.desktop /app/share/applications/${FLATPAK_ID}.desktop
     - install -Dm 644 doom.png /app/share/icons/hicolor/128x128/apps/${FLATPAK_ID}.png
     - install -Dm 755 apply_extra.sh /app/bin/apply_extra
     - install -Dm 644 Classic-RBDOOM-3-BFG.appdata.xml /app/share/metainfo/${FLATPAK_ID}.metainfo.xml
-    - install -Dm 755 DOOMBFA.sh /app/bin/DOOMBFA.sh
+    
 
     
