@@ -26,7 +26,7 @@
         And any additional .so files on the game's folder along side with any additional files that are required</p>
       <p>Known Bugs:</p>
       <p>(NOTE: Those bugs only apply to that release)</p>
-      <ul style="list-style-type:none;">
+      <ul>
         <li>Using Open Platform with Steam might result the associated game to be stuck in playing state,
          as a workaround restart the Steam Client</li>
         <li>The engine doesn't boot after installing OpenPlatform with Steam. Try to block access to the wayland socket from the app's flatpak rights</li>
