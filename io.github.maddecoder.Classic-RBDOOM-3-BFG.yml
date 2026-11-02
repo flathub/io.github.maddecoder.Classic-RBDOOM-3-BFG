@@ -104,8 +104,8 @@ modules:
   sources:
     - type: git
       url: https://github.com/MadDeCoDeR/CRBDL.git
-      tag: "1.0.17.18"
-      commit: 183575a00d9e6149ce967ce040e1fbdfc3c1f9dc
+      tag: "1.0.17.19"
+      commit: 30b8e46caf03e179c030fe681b652e4f4ff8e5b4
     - ./nuget-sources.json
   build-commands:
     - dotnet publish ./dbfal/dbfal.csproj -c Release --no-self-contained --source ./nuget-sources
