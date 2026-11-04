@@ -173,7 +173,8 @@ modules:
       tag-query: .tag_name
       version-query: $tag
       timestamp-query: .published_at
-      url-query: .assets[] | .browser_download_url
+      # The tag archive contains the pre-generated game data; releases have no uploaded assets.
+      url-query: '"https://github.com/MadDeCoDeR/BFA-Assets/archive/refs/tags/" + ($tag | @uri) + ".zip"'
   - type: file
     path: Classic-RBDOOM-3-BFG.appdata.xml
   - type: file
